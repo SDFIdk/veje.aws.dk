@@ -36,7 +36,7 @@ app.get('/oisbygninger', function (req, res, next) {
     return;
   } 
   var options= {};
-  options.url='https://dawa.aws.dk/ois/bygninger';
+  options.url='https://api.dataforsyningen.dk/ois/bygninger';
   options.qs= {};
   options.qs.format= req.query.format;
   options.qs .x= req.query.x;

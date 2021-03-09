@@ -84,16 +84,16 @@ exports.eachFeature=
         popup= layer.bindPopup(feature.properties.nr + " " + feature.properties.navn);
       }
       else if ("vejnavn" in feature.properties && "husnr" in feature.properties && "etage" in feature.properties) {  
-        popup= layer.bindPopup("<a target='_blank' href='https://dawa.aws.dk/adresser/"+feature.properties.id+"'>"+feature.properties.vejnavn + " " + feature.properties.husnr + ", " + (feature.properties.supplerendebynavn?feature.properties.supplerendebynavn+", ":"") + feature.properties.postnr + " " + feature.properties.postnrnavn + "</a>");
+        popup= layer.bindPopup("<a target='_blank' href='https://api.dataforsyningen.dk/adresser/"+feature.properties.id+"'>"+feature.properties.vejnavn + " " + feature.properties.husnr + ", " + (feature.properties.supplerendebynavn?feature.properties.supplerendebynavn+", ":"") + feature.properties.postnr + " " + feature.properties.postnrnavn + "</a>");
       }
       else if ("vejnavn" in feature.properties && "husnr" in feature.properties) {  
-        popup= layer.bindPopup("<a target='_blank' href='https://dawa.aws.dk/adgangsadresser/"+feature.properties.id+"'>"+feature.properties.vejnavn + " " + feature.properties.husnr + ", " + (feature.properties.supplerendebynavn?feature.properties.supplerendebynavn+", ":"") + feature.properties.postnr + " " + feature.properties.postnrnavn + "</a>");
+        popup= layer.bindPopup("<a target='_blank' href='https://api.dataforsyningen.dk/adgangsadresser/"+feature.properties.id+"'>"+feature.properties.vejnavn + " " + feature.properties.husnr + ", " + (feature.properties.supplerendebynavn?feature.properties.supplerendebynavn+", ":"") + feature.properties.postnr + " " + feature.properties.postnrnavn + "</a>");
       }
       else if ("Tekniskanlaeg_id" in feature.properties) {  
-        popup= layer.bindPopup("<a target='_blank' href='https://dawa.aws.dk/ois/tekniskeanlaeg?id="+feature.properties.Tekniskanlaeg_id+"'>"+dawaois.klassifikationskoder[feature.properties.Klassifikation] + " etableret " + feature.properties.Etableringsaar + "</a>");
+        popup= layer.bindPopup("<a target='_blank' href='https://api.dataforsyningen.dk/ois/tekniskeanlaeg?id="+feature.properties.Tekniskanlaeg_id+"'>"+dawaois.klassifikationskoder[feature.properties.Klassifikation] + " etableret " + feature.properties.Etableringsaar + "</a>");
       }
       else if ("Bygning_id" in feature.properties) {  
-        popup= layer.bindPopup("<a target='_blank' href='https://dawa.aws.dk/ois/bygninger?id="+feature.properties.Bygning_id+"'>"+dawaois.anvendelseskoder[feature.properties.BYG_ANVEND_KODE] + " fra " + feature.properties.OPFOERELSE_AAR + "</a>");
+        popup= layer.bindPopup("<a target='_blank' href='https://api.dataforsyningen.dk/ois/bygninger?id="+feature.properties.Bygning_id+"'>"+dawaois.anvendelseskoder[feature.properties.BYG_ANVEND_KODE] + " fra " + feature.properties.OPFOERELSE_AAR + "</a>");
       }
       if (showpopup) popup.openPopup();
     }

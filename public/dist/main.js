@@ -959,13 +959,12 @@ exports.viskort = function(id,ticket,options) {
   var map = new L.Map(id, options);
 
   function danKort(service,layer,styles,transparent) {
-		return L.tileLayer.wms('https://api.dataforsyningen.dk/service', 
+		return L.tileLayer.wms('https://api.dataforsyningen.dk/' + service, 
 			{
 				format: 'image/png',
 				maxZoom: 14,
 				minZoom: 2,
 				ticket: ticket,
-				servicename: service,
 	  		attribution: 'Data</a> fra <a href="https://dawadocs.dataforsyningen.dk">DAWA</a> | Map data &copy;  <a href="https://sdfe.dk">SDFE</a>',
 	  		layers: layer,
 	  		styles: styles,
